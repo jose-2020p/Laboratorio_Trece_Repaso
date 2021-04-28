@@ -101,6 +101,9 @@ namespace Laboratorio_Trece_Repaso
             TextBoxNombre_profe.Text = "";
             TextBoxApellido_profe.Text = "";
             TextBoxDireccion_profe.Text = "";
+
+
+
         }
 
         protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)

@@ -34,6 +34,18 @@ namespace Laboratorio_Trece_Repaso
         public string Id_profesor { get => id_profesor; set => id_profesor = value; }
         public string Titulo_universitario_profesor { get => titulo_universitario_profesor; set => titulo_universitario_profesor = value; }
     }
+    public class Personal_Admin_Clase : Datos_Generales_Clase 
+    {
+        string numero_IGGS_Admin;
+        string profesion_Admin;
+        DateTime fecha_inicio_admin;
+        DateTime fecha_fin_admin;
+
+        public string Numero_IGGS_Admin { get => numero_IGGS_Admin; set => numero_IGGS_Admin = value; }
+        public string Profesion_Admin { get => profesion_Admin; set => profesion_Admin = value; }
+        public DateTime Fecha_inicio_admin { get => fecha_inicio_admin; set => fecha_inicio_admin = value; }
+        public DateTime Fecha_fin_admin { get => fecha_fin_admin; set => fecha_fin_admin = value; }
+    }
     public class Datos_Generales_Clase
     {
         string nombre_general;
