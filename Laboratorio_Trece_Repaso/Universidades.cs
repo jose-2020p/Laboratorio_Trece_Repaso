@@ -10,14 +10,17 @@ namespace Laboratorio_Trece_Repaso
         string nombre_universidad;
         List<Alumnos_Clase> vector_alumnos = new List<Alumnos_Clase>();
         List<Profesores_Clase> vector_profesor = new List<Profesores_Clase>();
+        List<Personal_Admin_Clase> vector_admin = new List<Personal_Admin_Clase>();
         public string Nombre_universidad { get => nombre_universidad; set => nombre_universidad = value; }
         public List<Alumnos_Clase> Vector_alumnos { get => vector_alumnos; set => vector_alumnos = value; }
         public List<Profesores_Clase> Vector_profesor { get => vector_profesor; set => vector_profesor = value; }
+        public List<Personal_Admin_Clase> Vector_admin { get => vector_admin; set => vector_admin = value; }
 
         public Universidades_Clase()
         {
             vector_alumnos = new List<Alumnos_Clase>();
             vector_profesor= new List<Profesores_Clase>();
+            vector_admin = new List<Personal_Admin_Clase>();
         }
     }
     public class Alumnos_Clase:Datos_Generales_Clase

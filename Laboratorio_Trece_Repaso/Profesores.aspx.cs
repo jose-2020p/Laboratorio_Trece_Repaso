@@ -15,6 +15,7 @@ namespace Laboratorio_Trece_Repaso
         static List<Profesores_Clase> array_profesor = new List<Profesores_Clase>();
         protected void Page_Load(object sender, EventArgs e)
         {
+            MaintainScrollPositionOnPostBack = true;
             if (!IsPostBack)
             {
                 string archivo = Server.MapPath("Datos_Universidad.json");
@@ -112,6 +113,21 @@ namespace Laboratorio_Trece_Repaso
             Label1.Text = "Datos de Univeresidad: \r\n" + array_universidades[seleccionada].Nombre_universidad;
             TextBoxUniversidad_P.Text = "" + array_universidades[seleccionada].Nombre_universidad;
             GridView2.DataSource = array_universidades[seleccionada].Vector_profesor;
+            GridView2.DataBind();
+        }
+
+        protected void ButtonAliminar_Click(object sender, EventArgs e)
+        {
+            //eliminar
+            int idUniversidad = GridView1.SelectedIndex;
+            int idAlumno = GridView2.SelectedIndex;
+
+
+            array_universidades[idUniversidad].Vector_profesor.RemoveAt(idAlumno);
+
+            Json();
+
+            GridView2.DataSource = array_universidades[idUniversidad].Vector_profesor;
             GridView2.DataBind();
         }
     }

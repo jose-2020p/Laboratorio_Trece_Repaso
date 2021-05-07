@@ -14,6 +14,7 @@ namespace Laboratorio_Trece_Repaso
         static List<Universidades_Clase> array_universidad = new List<Universidades_Clase>();
         protected void Page_Load(object sender, EventArgs e)
         {
+            MaintainScrollPositionOnPostBack = true;
             if (!IsPostBack)
             {
                 string archivo = Server.MapPath("Datos_Universidad.json");

@@ -42,6 +42,24 @@ namespace Laboratorio_Trece_Repaso
         protected global::System.Web.UI.WebControls.GridView GridView2;
 
         /// <summary>
+        /// Control ButtonModificar.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button ButtonModificar;
+
+        /// <summary>
+        /// Control ButtonGuardarCambios.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button ButtonGuardarCambios;
+
+        /// <summary>
         /// Control TextBoxUniversidad.
         /// </summary>
         /// <remarks>

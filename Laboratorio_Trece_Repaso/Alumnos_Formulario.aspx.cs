@@ -16,6 +16,7 @@ namespace Laboratorio_Trece_Repaso
         static List<Alumnos_Clase> array_alumnos = new List<Alumnos_Clase>();
         protected void Page_Load(object sender, EventArgs e)
         {
+            MaintainScrollPositionOnPostBack = true;
             if (!IsPostBack)
             {
                 string archivo = Server.MapPath("Datos_Universidad.json");
@@ -110,6 +111,44 @@ namespace Laboratorio_Trece_Repaso
             TextBoxUniversidad.Text = "" + array_universidades[seleccionada].Nombre_universidad;
             GridView2.DataSource = array_universidades[seleccionada].Vector_alumnos;
             GridView2.DataBind();
+        }
+
+        protected void ButtonModificar_Click(object sender, EventArgs e)
+        {
+
+            //editar
+            int idUniversidad = GridView1.SelectedIndex;
+            int idAlumno = GridView2.SelectedIndex;
+
+            TextBoxCarnet.Text = array_universidades[idUniversidad].Vector_alumnos[idAlumno].Carnet_alumno;
+            TextBoxNombre.Text = array_universidades[idUniversidad].Vector_alumnos[idAlumno].Nombre_general;
+            TextBoxApellido.Text = array_universidades[idUniversidad].Vector_alumnos[idAlumno].Apellido_general;
+            TextBoxDireccion.Text = array_universidades[idUniversidad].Vector_alumnos[idAlumno].Direccion_general;
+
+            Label1.Text = "Realice los cambios y luego oprima el boton GUARDAR CAMBIOS";
+
+        }
+
+        protected void ButtonGuardarCambios_Click(object sender, EventArgs e)
+        {
+            //guardar cambios
+            int idUniversidad = GridView1.SelectedIndex;
+            int idAlumno = GridView2.SelectedIndex;
+
+            array_universidades[idUniversidad].Vector_alumnos[idAlumno].Carnet_alumno = TextBoxCarnet.Text;
+            array_universidades[idUniversidad].Vector_alumnos[idAlumno].Nombre_general = TextBoxNombre.Text;
+            array_universidades[idUniversidad].Vector_alumnos[idAlumno].Apellido_general = TextBoxApellido.Text;
+            array_universidades[idUniversidad].Vector_alumnos[idAlumno].Direccion_general = TextBoxDireccion.Text;
+
+            Json();
+
+            GridView2.DataSource = array_universidades[idUniversidad].Vector_alumnos;
+            GridView2.DataBind();
+            TextBoxCarnet.Text = "";
+            TextBoxNombre.Text = "";
+            TextBoxApellido.Text = "";
+            TextBoxDireccion.Text = "";
+
         }
     }
 }
